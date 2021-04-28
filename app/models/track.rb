@@ -83,6 +83,11 @@ class Track < ApplicationRecord
     "https://exercism-icons-staging.s3.eu-west-2.amazonaws.com/tracks/#{slug}.svg"
   end
 
+  # TODO
+  def documentation_url
+    "https://exercism.io/tracks/documentation"
+  end
+
   # TODO: Create mapping for Highlight.JS, otherwise use slug
   def ace_language
     slug

@@ -15,7 +15,8 @@ module ReactComponents
       private
       def links
         {
-          repo: track.repo_url
+          repo: track.repo_url,
+          documentation: track.documentation_url
         }
       end
     end

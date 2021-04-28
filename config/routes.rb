@@ -43,6 +43,7 @@ Rails.application.routes.draw do
       member do
         post :activate_practice_mode
         post :reset
+        post :leave
       end
     end
 
@@ -284,6 +285,7 @@ Rails.application.routes.draw do
     resources :user_tracks, only: [] do
       get :practice_mode, on: :member
       get :reset, on: :member
+      get :leave, on: :member
     end
     resources :modals, only: [] do
       collection do

@@ -38,6 +38,13 @@ Rails.application.routes.draw do
       resources :tracks, only: [:show]
     end
 
+    # TODO: Stub controller
+    resources :user_tracks, only: [] do
+      member do
+        post :activate_practice_mode
+      end
+    end
+
     scope :v2 do # rubocop:disable Naming/VariableNumber
       get "ping" => "ping#index"
       get "validate_token" => "validate_token#index"
@@ -273,6 +280,9 @@ Rails.application.routes.draw do
   # TODO: Remove these before launching
   namespace :temp do
     resources :tracks, only: [:create]
+    resources :user_tracks, only: [] do
+      get :practice_mode, on: :member
+    end
     resources :modals, only: [] do
       collection do
         get :mentoring_sessions

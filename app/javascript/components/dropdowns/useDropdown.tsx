@@ -107,8 +107,12 @@ export const useDropdown = (
           onItemSelect(index)
         } else {
           const link = menuItemElementsRef.current[index].querySelector('a')
+          const button = menuItemElementsRef.current[index].querySelector(
+            'button'
+          )
 
           link?.click()
+          button?.click()
         }
 
         break

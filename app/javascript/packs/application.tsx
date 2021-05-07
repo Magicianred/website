@@ -185,6 +185,7 @@ import {
   SolutionForStudent,
   CommunitySolution,
   Testimonial,
+  User,
 } from '../components/types'
 import { Assignment, Submission } from '../components/editor/types'
 import {
@@ -516,6 +517,12 @@ initReact({
   ),
   'profile-first-time-modal': (data: any) => (
     <Profile.FirstTimeModal links={data.links} />
+  ),
+  'profile-avatar-selector': (data: any) => (
+    <Profile.AvatarSelector
+      user={camelizeKeysAs<User>(data.user)}
+      links={data.links}
+    />
   ),
 })
 

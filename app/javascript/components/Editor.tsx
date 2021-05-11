@@ -436,7 +436,14 @@ export function Editor({
             onCancel={cancel}
             error={apiError?.message}
           />
-          <RunTestsButton onClick={runTests} />
+          <RunTestsButton
+            onClick={runTests}
+            disabled={
+              submissionStatus === SubmissionStatus.CREATING ||
+              submission?.testRun?.status === TestRunStatus.QUEUED ||
+              submission?.testRun?.status === TestRunStatus.CANCELLING
+            }
+          />
           <SubmitButton onClick={submit} disabled={isSubmitDisabled} />
         </div>
 
